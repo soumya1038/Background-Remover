@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: u2net-background-remover
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: BG_REMOVER_API_KEY
+        sync: false
+      - key: MAX_IMAGE_BYTES
+        value: "8388608"
+      - key: ALLOWED_IMAGE_HOSTS
+        value: res.cloudinary.com
